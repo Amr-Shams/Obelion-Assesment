@@ -10,7 +10,7 @@ const router = Router();
 
 /**
  * @swagger
- * /books:
+ * /api/:
  *   get:
  *     summary: Retrieve a list of books with optional search and filtering
  *     tags: [Books]
