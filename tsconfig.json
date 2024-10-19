@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "target": "ES6",
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
@@ -15,7 +14,11 @@
     ]
   },
   "include": [
-    "src", 
-    "tests"
+    "src/**/*.ts",
+    "tests",
+    "src/types/**/*.d.ts"
+  ],
+  "files": [
+    "src/types/express.d.ts"
   ]
 }
