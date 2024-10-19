@@ -45,5 +45,9 @@
     "ts-jest": "^29.2.5",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.3"
+  }, 
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
   }
 }
