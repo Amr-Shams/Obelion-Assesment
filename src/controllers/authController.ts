@@ -15,10 +15,7 @@ export const register = async (req: Request, res: Response, next: NextFunction):
             res.status(400).json({ error: 'Invalid email or password' });
             return;
         }
-
-
         const hashedPassword = await bcrypt.hash(password, 10);
-        console.log("Process DatabaseURL: ", process.env.DATABASE_URL);
         const user = await prisma.user.create({
             data: { email, password: hashedPassword, name },
         });

@@ -9,11 +9,29 @@
     "build": "tsc",
     "prisma:migrate": "prisma migrate deploy",
     "prisma:generate": "prisma generate",
-    "test": "jest",
+    "test": "jest --coverage",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/src",
+      "<rootDir>/tests"
+    ],
+    "testMatch": ["**/?(*.)+(spec|test).[tj]s?(x)"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+    "transform": {
+      "^.+\\.tsx?$": ["ts-jest", {
+        "tsconfig": "tsconfig.json"
+      }]
+    },
+    "transformIgnorePatterns": ["<rootDir>/node_modules/"]
   },
   "keywords": [],
   "author": "",
@@ -45,7 +63,7 @@
     "ts-jest": "^29.2.5",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.3"
-  }, 
+  },
   "engines": {
     "node": "20.x",
     "npm": "10.x"
